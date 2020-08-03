@@ -1,19 +1,3 @@
-//示例代码
-// <!DOCTYPE html>
-// <html lang="zh-cn">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <title>QuickStyle 示例</title>
-//     <script src="../js/quickStyle.js"></script>
-// </head>
-// <body class="pd_0px m_0px">
-//     <div class="bg_red w_180px m_0&auto">
-//         <div class="c_#0F0 h_100px lh_100px ta_center b_5px&solid#00f b-c_rgba(45,45,45,.5)">我是示例文本</div>
-//     </div>
-// </body>
-// </html>
-
 {
     const STYLES = new Map();
     //可扩展的对象数组，key 缩写前缀，value 对应的样式
