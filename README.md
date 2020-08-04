@@ -1,5 +1,5 @@
 # QuickStyle
-快速编写HTML的样式
+快速编写HTML的样式，适用于简单的样式
 
 ```html
 <!DOCTYPE html>
