@@ -1,5 +1,5 @@
 # QuickStyle
-快速的编写HTML的样式
+快速编写HTML的样式
 
 ```html
 <!DOCTYPE html>
@@ -10,8 +10,9 @@
     <title>QuickStyle 示例</title>
     <script src="QuickStyle.js"></script>
 </head>
-<body class="pd_0px m_0px">
+<body class="pd_0 m_0">
     <div class="bg_red w_180px m_0&auto">
+        <!--&代替空格-->
         <div class="c_#0F0 h_100px lh_100px ta_center b_5px&solid#00f b-c_rgba(45,45,45,.5)">我是示例文本</div>
     </div>
 </body>
