@@ -26,8 +26,8 @@
         for (let k of Object.keys(v)) {
             STYLES.set(k, v[k]);
         }
-    })
-    window.STYLES = STYLES;
+    });
+    
     function getAllElements() {
         let elements = [];
         let objs = document.all;
@@ -54,5 +54,6 @@
         });
     }
     window.addEventListener("load", loadQuickStyle, false);
+    window.reloadQuickStyle = loadQuickStyle;
 } (window);
 
