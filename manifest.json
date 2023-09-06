@@ -20,7 +20,7 @@
   "short_name": "冰淇淋",
   "orientation": "portrait",
   "display": "minimal-ui",
-  "start_url": "baidu.com?m_source=pwa",
+  "start_url": "https://quickstyle.gatico.com.cn?m_source=pwa",
   "description": "冰淇淋-你的生活指南",
   "background_color": "#ffffff",
   "theme_color": "#5190ff"
