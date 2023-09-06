@@ -1,0 +1,27 @@
+{
+  "icons": [
+    {
+      "src": "img/ice_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "img/ice_256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "img/ice_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "name": "冰淇淋",
+  "short_name": "冰淇淋",
+  "orientation": "portrait",
+  "display": "minimal-ui",
+  "start_url": "baidu.com?m_source=pwa",
+  "description": "冰淇淋-你的生活指南",
+  "background_color": "#ffffff",
+  "theme_color": "#5190ff"
+}
