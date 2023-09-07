@@ -27,7 +27,7 @@
                 $("#md5_str1").val($.md5($("#str").val()));
                 $("#md5_str2").val($.md5($("#md5_str1").val()));
                 let saltFormat = $("#salt_format").val()
-                $("#res").val($.md5(saltFormat.replace("$0", $("#md5_str").val()).replace("$1", $("#salt").val())));
+                $("#res").val($.md5(saltFormat.replace("$0", $("#md5_str2").val()).replace("$1", $("#salt").val())));
             });
         })
     })
