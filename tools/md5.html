@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.md5.js"></script>
+    <script src="../js/Cookie.js"></script>
     <title>MD5 工具</title>
 </head>
 <body>
-md5
+<h1>md5</h1>
+<p id="control" style="text-align: center">
+    要加密的内容：<input type="text" name="str" id="str"/></br>
+    一次加密的内容：<input type="text" name="md5_str1" id="md5_str1" value=""/></br>
+    二次加密的内容：<input type="text" name="md5_str2" id="md5_str2" value=""/></br>
+    加盐格式：<input type="text" name="salt_format" id="salt_format" placeholder="$0{$1}" value="$0{$1}"/></br>
+    盐：<input type="text" name="salt" id="salt" value=""/>
+</p>
+<p style="text-align: center">
+    结果：<input type="text" name="res" id="res"/>
+</p>
+<script>
+    $(function () {
+        $("#control>input").each(function (e) {
+            $(this).change(function () {
+                $("#md5_str1").val($.md5($("#str").val()));
+                $("#md5_str2").val($.md5($("#md5_str1").val()));
+                let saltFormat = $("#salt_format").val()
+                $("#res").val($.md5(saltFormat.replace("$0", $("#md5_str").val()).replace("$1", $("#salt").val())));
+            });
+        })
+    })
+</script>
 </body>
 </html>
