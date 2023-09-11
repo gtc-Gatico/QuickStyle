@@ -18,7 +18,7 @@ const md5_str1 = ref('');
 const md5_str2 = ref('');
 
 const salt = ref('');
-const salt_format = ref('$0$1');
+const salt_format = ref('$0{$1}');
 
 const res = computed(()=>{
   md5_str1.value = md5(str.value)
@@ -31,9 +31,9 @@ const res = computed(()=>{
 </script>
 <template>
   <van-cell-group inset>
-    <van-field type="textarea"  autosize v-model="str" label="要加密的内容：" placeholder="要加密的内容"/>
-    <van-field type="textarea" autosize  v-model="md5_str1" label="一次加密的内容：" placeholder="一次加密的内容"/>
-    <van-field type="textarea" autosize v-model="md5_str2" label="二次加密的内容$0：" placeholder="二次加密的内容"/>
+    <van-field type="textarea" autosize v-model="str" label="加密数据：" placeholder="要加密的内容"/>
+    <van-field type="textarea" autosize v-model="md5_str1" label="一次加密：" placeholder="一次加密的内容"/>
+    <van-field type="textarea" autosize v-model="md5_str2" label="二次加密$0：" placeholder="二次加密的内容"/>
     <van-field type="text" v-model="salt" label="盐$1：" placeholder="盐"/>
     <van-field type="text" v-model="salt_format" label="加盐格式：" placeholder="$0{$1}" value="$0$1"/>
   </van-cell-group>
