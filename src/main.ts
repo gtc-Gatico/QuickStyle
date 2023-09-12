@@ -1,30 +1,18 @@
-import './assets/main.css'
+// import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
-// Toast
-import { showToast } from 'vant';
-import 'vant/es/toast/style';
-
-// Dialog
-import { showDialog } from 'vant';
-import 'vant/es/dialog/style';
-
-// Notify
-import { showNotify } from 'vant';
-import 'vant/es/notify/style';
-
-// ImagePreview
-import { showImagePreview } from 'vant';
-import 'vant/es/image-preview/style';
-
+import DevUI from 'vue-devui';
+import 'vue-devui/style.css';
+import '@devui-design/icons/icomoon/devui-icon.css';
 import App from './App.vue'
 import router from './router'
+import { ThemeServiceInit, infinityTheme } from 'devui-theme';
 
+ThemeServiceInit({ infinityTheme }, 'infinityTheme');
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-
+app.use(DevUI)
 app.mount('#app')

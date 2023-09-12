@@ -7,6 +7,17 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    DButton: typeof import('vue-devui/button/index.es.js')['Button']
+    DCol: typeof import('vue-devui/grid/index.es.js')['Col']
+    DContent: typeof import('vue-devui/layout/index.es.js')['Content']
+    DHeader: typeof import('vue-devui/layout/index.es.js')['Header']
+    DInput: typeof import('vue-devui/input/index.es.js')['Input']
+    DLayout: typeof import('vue-devui/layout/index.es.js')['Layout']
+    DMenu: typeof import('vue-devui/menu/index.es.js')['Menu']
+    DMenuItem: typeof import('vue-devui/menu/index.es.js')['MenuItem']
+    DRow: typeof import('vue-devui/grid/index.es.js')['Row']
+    DSubMenu: typeof import('vue-devui/menu/index.es.js')['SubMenu']
+    DTextarea: typeof import('vue-devui/textarea/index.es.js')['Textarea']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
@@ -16,9 +27,9 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
-    VanButton: typeof import('vant/es')['Button']
-    VanCellGroup: typeof import('vant/es')['CellGroup']
-    VanField: typeof import('vant/es')['Field']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    vRipple: typeof import('vue-devui/ripple/index.es.js')['RippleDirective']
   }
 }

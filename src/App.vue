@@ -1,75 +1,64 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+<script setup>
+import { ref } from 'vue'
+import {RouterLink, RouterView} from 'vue-router'
+import {ThemeServiceInit, infinityTheme, provenceTheme, sweetTheme, deepTheme, galaxyTheme} from 'devui-theme';
+import 'vue-devui/style.css';
+const themeList = ref([
+  {name: "无限", theme: infinityTheme},
+  {name: "蜜糖", theme: sweetTheme},
+  {name: "紫罗兰", theme: provenceTheme},
+  {name: "深邃夜空", theme: deepTheme},
+  {name: "追光", theme: galaxyTheme}
+])
 
+const themeService = ThemeServiceInit({infinityTheme}, 'infinityTheme');
+
+const changeTheme = (index) => {
+  themeService.applyTheme(themeList.value[index].theme);
+};
 </script>
 
 <template>
-  <header>
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/md5">Md5</RouterLink>
-      </nav>
-  </header>
+  <d-layout>
+    <d-header class="dheader">
+      <d-menu mode="horizontal">
+        <d-menu-item key="home">
+          <template #icon>
+            <i class="icon-homepage"></i>
+          </template>
+          <RouterLink to="/">Home</RouterLink>
+        </d-menu-item>
+        <d-menu-item key="md5">
+          <RouterLink to="/md5">Md5</RouterLink>
+        </d-menu-item>
+        <d-menu-item key="about" route="">
+          <RouterLink to="/about">About</RouterLink>
+        </d-menu-item>
+        <d-menu-item>
+          <d-sub-menu title="主题" key="theme">
+            <d-menu-item v-for="(item, index) in themeList" key="{{item.name}}" @click="changeTheme(index)"> {{item.name}} </d-menu-item>
+          </d-sub-menu>
+        </d-menu-item>
+      </d-menu>
 
-  <RouterView />
+    </d-header>
+    <d-content class="dcontent">
+      <RouterView/>
+    </d-content>
+  </d-layout>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
+.dheader, .dfooter {
+  background: #333854;
+  color: #fff;
   text-align: center;
-  margin-top: 2rem;
+  line-height: 40px;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.dcontent {
+  height: 100vh;
+  text-align: center;
+  background: var(--devui-global-bg-normal)
 }
 </style>

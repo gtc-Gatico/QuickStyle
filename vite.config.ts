@@ -2,12 +2,10 @@ import {fileURLToPath, URL} from 'node:url'
 
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
-//start vant
 import Components from 'unplugin-vue-components/vite';
-import { VantResolver } from '@vant/auto-import-resolver';
-//end vant
 import vueJsx from '@vitejs/plugin-vue-jsx'
-
+//devui
+import { DevUiResolver } from 'unplugin-vue-components/resolvers'
 // https://vitejs.dev/config/
 export default defineConfig({
     build: {
@@ -17,7 +15,7 @@ export default defineConfig({
         vue(),
         vueJsx(),
         Components({
-            resolvers: [VantResolver()],
+            resolvers: [DevUiResolver()],
         }),
     ],
     resolve: {
