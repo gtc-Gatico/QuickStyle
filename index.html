@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+<head>
     <meta charset="UTF-8">
     <link rel="icon" href="favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>小工具</title>
-    <link rel="manifest" href="/manifest.json" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+    <link rel="manifest" href="/manifest.json"/>
+</head>
+<body>
+<div id="app"></div>
+<script type="module" src="/src/main.ts"></script>
+<script defer>
+    let ice128 = new Image();
+    ice128.src = "/img/ice_128.png"
+    let ice256 = new Image();
+    ice256.src = "/img/ice_256.png"
+</script>
+</body>
 </html>
