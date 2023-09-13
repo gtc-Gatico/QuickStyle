@@ -1,11 +1,6 @@
 {
   "icons": [
     {
-      "src": "/img/ice_512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
       "src": "/img/ice_256.png",
       "sizes": "256x256",
       "type": "image/png"
