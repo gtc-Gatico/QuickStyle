@@ -15,6 +15,8 @@ const res = computed(() => {
     md5_str2.value = md5(md5_str1.value)
     return md5(salt_format.value.replace("$0", md5_str2.value).replace("$1", salt.value))
   }
+  md5_str1.value = ""
+  md5_str2.value = ""
 });
 
 </script>
@@ -24,7 +26,7 @@ const res = computed(() => {
       <d-col :span="2">
         <p>加密数据:</p>
       </d-col>
-      <d-col :span="6">
+      <d-col :span="8">
         <d-textarea autofocus v-model="str" placeholder="要加密的内容"/>
       </d-col>
     </d-row>
@@ -32,7 +34,7 @@ const res = computed(() => {
       <d-col :span="2">
         <p>一次加密:</p>
       </d-col>
-      <d-col :span="6">
+      <d-col :span="8">
         <d-textarea v-model="md5_str1" placeholder="一次加密的内容"/>
       </d-col>
     </d-row>
@@ -40,7 +42,7 @@ const res = computed(() => {
       <d-col :span="2">
         <p>二次加密$0:</p>
       </d-col>
-      <d-col :span="6">
+      <d-col :span="8">
         <d-textarea v-model="md5_str2" placeholder="二次加密的内容"/>
       </d-col>
     </d-row>
@@ -48,7 +50,7 @@ const res = computed(() => {
       <d-col :span="2">
         <p>盐$1:</p>
       </d-col>
-      <d-col :span="6">
+      <d-col :span="8">
         <d-input v-model="salt" placeholder="盐"/>
       </d-col>
     </d-row>
@@ -56,7 +58,7 @@ const res = computed(() => {
       <d-col :span="2">
         <p>加盐格式:</p>
       </d-col>
-      <d-col :span="6">
+      <d-col :span="8">
         <d-input v-model="salt_format"/>
       </d-col>
     </d-row>
@@ -65,7 +67,7 @@ const res = computed(() => {
         <p>结果:</p>
       </d-col>
 
-      <d-col :span="6">
+      <d-col :span="8">
         <d-textarea v-model="res"/>
       </d-col>
     </d-row>
