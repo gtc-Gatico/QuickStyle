@@ -29,7 +29,4 @@ declare module 'vue' {
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
-  export interface ComponentCustomProperties {
-    vRipple: typeof import('vue-devui/ripple/index.es.js')['RippleDirective']
-  }
 }

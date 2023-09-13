@@ -51,7 +51,7 @@ const changeTheme = (index) => {
         </d-col>
         <d-col :span="6">
           <d-row justify="end" :span="24" style="background: transparent">
-            <d-menu mode="horizontal" disabled>
+            <d-menu mode="horizontal" >
               <d-menu-item key="theme">
                 <d-sub-menu title="主题">
                   <d-menu-item v-for="(item, index) in themeList" key="{{item.name}}" @click="changeTheme(index)">
