@@ -29,24 +29,17 @@ const changeTheme = (index) => {
               <template #icon>
                 <i class="icon-homepage"></i>
               </template>
-              <RouterLink to="/">Home</RouterLink>
+              <RouterLink to="/">主页</RouterLink>
             </d-menu-item>
             <d-menu-item key="md5">
               <RouterLink to="/md5">Md5</RouterLink>
             </d-menu-item>
-            <d-menu-item key="about" route="">
-              <RouterLink to="/about">About</RouterLink>
+            <d-menu-item key="localserver">
+              <RouterLink to="/localserver">本地服务</RouterLink>
             </d-menu-item>
-            <!--          <d-menu-item key="theme">-->
-            <!--            <d-sub-menu>-->
-            <!--              <template #icon>-->
-            <!--                <i class="icon-theme-color"></i>-->
-            <!--              </template>-->
-            <!--              <d-menu-item v-for="(item, index) in themeList" key="{{item.name}}" @click="changeTheme(index)">-->
-            <!--                {{ item.name }}-->
-            <!--              </d-menu-item>-->
-            <!--            </d-sub-menu>-->
-            <!--          </d-menu-item>-->
+            <d-menu-item key="about" >
+              <RouterLink to="/about">关于</RouterLink>
+            </d-menu-item>
           </d-menu>
         </d-col>
         <d-col :span="6">
